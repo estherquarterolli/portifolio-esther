@@ -1,0 +1,5 @@
+# Configurações locais do editor / Claude (não vão para o site)
+.claude/
+.vscode/
+Thumbs.db
+desktop.ini
