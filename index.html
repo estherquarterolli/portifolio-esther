@@ -1,0 +1,1077 @@
+<!doctype html>
+<html lang="pt-BR" data-lang="pt">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Esther Quarterolli</title>
+<meta name="description" content="Esther Quarterolli — Full Stack & AI Developer no Rio de Janeiro. Cofundadora da SymbionLab, criadora do Kalli Agendia e pesquisadora do GeoVision.AI.">
+<meta name="theme-color" content="#050407">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='30' fill='%23ff3d8b'/%3E%3Ccircle cx='24' cy='28' r='5' fill='%23fff'/%3E%3Ccircle cx='40' cy='28' r='5' fill='%23fff'/%3E%3Ccircle cx='25' cy='29' r='2.4' fill='%23050407'/%3E%3Ccircle cx='41' cy='29' r='2.4' fill='%23050407'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;600;800;900&family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#050407; --card:#0e0910; --card2:#160c15; --text:#fff0f6; --muted:#b59cab; --dim:#7d6673;
+  --pink:#ff3d8b; --pink2:#ff7ab4; --pink3:#ffc2dc; --hot:#ff1f78;
+  --line:rgba(255,61,139,.22); --line2:rgba(255,61,139,.45);
+  --glow:0 0 0 1px rgba(255,61,139,.35),0 0 40px -6px rgba(255,61,139,.45);
+  --glow2:0 0 0 1.5px rgba(255,61,139,.8),0 0 70px -4px rgba(255,61,139,.7);
+  --neon:0 0 6px rgba(255,61,139,.9),0 0 22px rgba(255,61,139,.6),0 0 48px rgba(255,61,139,.35);
+  --gut:clamp(16px,4vw,56px); --max:1280px;
+  --display:"Unbounded",system-ui,sans-serif; --serif:"Instrument Serif",Georgia,serif; --sans:"Manrope",system-ui,sans-serif; --mono:"JetBrains Mono",ui-monospace,monospace;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{background:var(--bg)}
+html.lenis,html.lenis body{height:auto}
+.lenis.lenis-smooth{scroll-behavior:auto!important}
+body{margin:0;background:var(--bg);color:var(--text);font:16px/1.6 var(--sans);-webkit-font-smoothing:antialiased;overflow-x:clip;position:relative;z-index:0}
+img{max-width:100%;display:block}
+a{color:inherit}
+::selection{background:var(--pink);color:#050407}
+html[data-lang="pt"] [lang="en"],html[data-lang="en"] [lang="pt"]{display:none!important}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 var(--gut)}
+h1,h2,h3,h4{margin:0;font-family:var(--display);font-weight:800;letter-spacing:-.03em}
+h2{font-size:clamp(2rem,5vw,4.4rem);line-height:1.02;max-width:18ch}
+h2 em,h3 em,.big em{font-family:var(--serif);font-style:italic;font-weight:400;letter-spacing:-.01em;color:var(--pink);text-shadow:var(--neon)}
+h3{font-size:clamp(1.5rem,2.4vw,2.2rem);line-height:1.05}
+p{margin:0}
+.muted{color:var(--muted)}
+.tag{display:inline-flex;align-items:center;gap:.55em;padding:.4em .85em;border-radius:99px;border:1px solid var(--line2);font-family:var(--mono);font-size:.7rem;letter-spacing:.06em;text-transform:uppercase;align-self:flex-start;color:var(--pink3);background:rgba(255,61,139,.06)}
+.tag i{width:8px;height:8px;border-radius:50%;background:var(--pink);box-shadow:0 0 10px var(--pink)}
+.chips{display:flex;flex-wrap:wrap;gap:8px;list-style:none;margin:0;padding:0}
+.chips li{padding:.42em .8em;border-radius:10px;background:rgba(255,61,139,.07);border:1px solid var(--line);font-size:.84rem;transition:background .3s,box-shadow .3s,color .3s}
+.chips li:hover{background:var(--pink);color:#050407;box-shadow:0 0 18px rgba(255,61,139,.7)}
+.btn{display:inline-flex;align-items:center;gap:.6em;padding:.9em 1.4em;border-radius:99px;font-weight:700;text-decoration:none;background:var(--pink);color:#050407;box-shadow:0 0 24px rgba(255,61,139,.45);transition:transform .3s cubic-bezier(.34,1.56,.64,1),box-shadow .3s}
+.btn:hover{transform:translateY(-3px) rotate(-2deg);box-shadow:0 0 44px rgba(255,61,139,.8)}
+.btn.ghost{background:transparent;color:var(--text);border:1.5px solid var(--pink);box-shadow:none}
+.z{position:relative;z-index:2}
+
+/* GALÁXIA DE FUNDO (fixa, só dentro do main) */
+#galaxy{position:fixed;inset:0;width:100vw;height:100vh;z-index:0;pointer-events:none;display:block}
+
+/* NAV */
+.nav{position:fixed;top:14px;left:var(--gut);right:var(--gut);z-index:80;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:8px 10px 8px 18px;border-radius:99px;background:rgba(5,4,7,.55);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid var(--line);max-width:var(--max);margin:0 auto}
+.logo{font-family:var(--display);font-weight:900;font-size:1.1rem;text-decoration:none;letter-spacing:-.04em}
+.logo span{color:var(--pink);text-shadow:var(--neon)}
+.nav ul{display:flex;gap:24px;list-style:none;margin:0;padding:0}
+.nav ul a{text-decoration:none;font-weight:600;font-size:.86rem;color:var(--muted);transition:color .25s,text-shadow .25s}
+.nav ul a:hover{color:var(--pink);text-shadow:var(--neon)}
+.lang{display:flex;gap:2px;border:1px solid var(--line2);border-radius:99px;padding:3px}
+.lang button{all:unset;cursor:pointer;font-family:var(--mono);font-size:.72rem;padding:.4em .75em;border-radius:99px;color:var(--muted)}
+.lang button[aria-pressed="true"]{background:var(--pink);color:#050407;box-shadow:0 0 14px rgba(255,61,139,.6)}
+.lang button:focus-visible{outline:2px solid var(--pink);outline-offset:2px}
+
+main{position:relative;z-index:1;background:var(--bg);clip-path:inset(0 0 0 0);overflow-x:clip}
+html{overflow-x:clip}
+
+/* FIO NEON QUE CONECTA AS SEÇÕES */
+.thread{position:absolute;left:0;top:0;width:100%;z-index:1;pointer-events:none;overflow:visible}
+.thread path{fill:none;stroke-linecap:round}
+.thread .t-bg{stroke:rgba(255,61,139,.28);stroke-width:2;stroke-dasharray:2 12}
+.thread .t-main{stroke:var(--pink2);stroke-width:3.5}
+.orb{position:absolute;left:0;top:0;z-index:5;pointer-events:none;opacity:0;transition:opacity .3s}
+.orb.show{opacity:1}
+.orb-body{position:absolute;width:42px;height:42px;left:-21px;top:-21px;border-radius:50%;background:radial-gradient(circle at 34% 28%,#ffd0e3 0%,#ff3d8b 55%,#b80f55 100%);box-shadow:0 0 0 6px rgba(255,61,139,.18),0 0 30px rgba(255,61,139,.9),0 0 70px rgba(255,61,139,.5)}
+.eyes{position:absolute;inset:0;display:flex;justify-content:center;align-items:center;gap:6px;animation:blink 4.5s infinite}
+.eyes i{width:9px;height:11px;border-radius:50%;background:#fff;position:relative}
+.eyes i::after{content:"";position:absolute;width:5px;height:5px;border-radius:50%;background:#050407;left:2px;top:3px;transform:translate(var(--lx,0),var(--ly,0));transition:transform .2s}
+@keyframes blink{0%,46%,50%,100%{transform:scaleY(1)}48%{transform:scaleY(.1)}}
+
+/* CURSOR */
+.cursor{position:fixed;left:0;top:0;z-index:90;pointer-events:none;width:0;height:0}
+.cursor span{position:absolute;left:-7px;top:-7px;width:14px;height:14px;border-radius:50%;background:var(--pink);box-shadow:0 0 18px rgba(255,61,139,.9);display:grid;place-items:center;color:#050407;font:700 .62rem/1 var(--mono);letter-spacing:.08em;white-space:nowrap;transition:width .35s cubic-bezier(.34,1.56,.64,1),height .35s cubic-bezier(.34,1.56,.64,1),left .35s cubic-bezier(.34,1.56,.64,1),top .35s cubic-bezier(.34,1.56,.64,1)}
+.cursor span b{opacity:0;transition:opacity .2s}
+.cursor.big span{width:94px;height:94px;left:-47px;top:-47px}
+.cursor.big span b{opacity:1}
+@media (hover:none),(pointer:coarse){.cursor{display:none}}
+
+/* 1. HERO — foto central que expande */
+.hero{position:relative;height:210vh}
+.hero-stage{position:sticky;top:0;height:100vh;overflow:hidden;z-index:2}
+.name{position:absolute;left:50%;transform:translateX(-50%);white-space:nowrap;font-family:var(--display);font-weight:900;line-height:.82;letter-spacing:-.05em;margin:0;will-change:transform,opacity}
+.n1{top:9vh;color:var(--text);text-shadow:0 0 30px rgba(255,61,139,.35)}
+.n2{bottom:6vh;color:transparent;-webkit-text-stroke:2px var(--pink);filter:drop-shadow(0 0 10px rgba(255,61,139,.7))}
+.n2 .fill{color:var(--pink);-webkit-text-stroke:0}
+.n1{z-index:2}.n2{z-index:4}
+.halo{position:absolute;left:50%;top:52%;width:var(--hs);height:var(--hs);margin:calc(var(--hs) / -2) 0 0 calc(var(--hs) / -2);border-radius:50%;z-index:1;--hs:min(64vh,74vw);background:radial-gradient(circle at 38% 32%,#ff8fc0 0%,#ff3d8b 42%,#e0156a 78%,#a80d4e 100%);box-shadow:0 0 0 2px rgba(255,122,180,.55),0 0 80px rgba(255,61,139,.75),0 0 200px rgba(255,61,139,.45);will-change:transform}
+.halo::after{content:"";position:absolute;inset:-26px;border-radius:50%;border:1.5px solid rgba(255,122,180,.45);animation:spin 18s linear infinite;border-top-color:transparent;border-left-color:transparent}
+@keyframes spin{to{transform:rotate(360deg)}}
+.me{position:absolute;left:50%;bottom:0;z-index:3;height:min(88vh,138vw);width:max-content;transform:translateX(-50%);transform-origin:50% 42%;will-change:transform,opacity}
+.me img{height:100%;width:auto;max-width:none;aspect-ratio:1122/1402;display:block;-webkit-mask-image:linear-gradient(180deg,#000 82%,transparent 100%);mask-image:linear-gradient(180deg,#000 82%,transparent 100%);transition:transform 1s cubic-bezier(.34,1.56,.64,1)}
+.me:hover img{transform:scale(1.03) rotate(-1deg)}
+.ring{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;opacity:0;overflow:visible}
+.ring.back{z-index:0}.ring.front{z-index:4}
+.core-label{position:absolute;z-index:3;left:50%;top:0;transform:translate(-50%,-50%);text-align:center;font-family:var(--display);font-weight:900;font-size:clamp(1.1rem,2.2vw,1.9rem);line-height:.95;letter-spacing:-.04em;color:#050407;opacity:0;pointer-events:none;white-space:nowrap}
+.core-label small{display:block;margin-top:.5em;font:600 .62rem var(--mono);letter-spacing:.16em;text-transform:uppercase}
+.ring path{fill:none;stroke:rgba(255,122,180,.6);stroke-width:1.5;stroke-dasharray:4 9}
+.pill{position:absolute;left:0;top:0;opacity:0;will-change:transform,opacity}
+.pill b{display:inline-block;white-space:nowrap;padding:.55em 1.05em;border-radius:99px;font:700 .84rem/1 var(--sans);transition:transform .35s cubic-bezier(.34,1.56,.64,1),box-shadow .3s}
+.pill.hard b{background:rgba(5,4,7,.88);color:var(--pink3);border:1.5px solid var(--pink);box-shadow:0 0 16px rgba(255,61,139,.4)}
+.pill.soft b{background:var(--pink);color:#050407;box-shadow:0 0 22px rgba(255,61,139,.65)}
+.pill:hover b{transform:scale(1.18) rotate(-4deg);box-shadow:0 0 34px rgba(255,61,139,.95)}
+.hero-note{position:absolute;z-index:5;left:var(--gut);top:14vh;width:min(30vw,360px);opacity:0;display:flex;flex-direction:column;gap:10px;pointer-events:none}
+.hero-note .lbl{font:600 .72rem var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--pink);text-shadow:var(--neon)}
+.hero-note p{font-size:.98rem;line-height:1.55;color:var(--text);opacity:.88}
+.legend{position:absolute;z-index:5;right:var(--gut);bottom:5vh;display:flex;gap:20px;opacity:0;font:600 .7rem var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--pink3)}
+.legend i{display:inline-block;width:11px;height:11px;border-radius:50%;margin-right:8px;vertical-align:-1px}
+@media (max-width:900px){.hero-note{width:auto;right:var(--gut);top:11vh}.legend{left:var(--gut);right:auto;bottom:2.5vh}}
+@media (max-width:699px){
+  .n1{top:11vh}
+  .halo{top:57%}
+  .me{height:min(74vh,128vw)}
+  .hero-note p{font-size:.86rem}
+  .pill b{font-size:.64rem;padding:.48em .78em}
+  .pill.soft b{font-size:.6rem}
+  .core-label{font-size:.95rem}
+}
+.hero-side{position:absolute;z-index:4;top:50%;font-family:var(--mono);font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--pink3);writing-mode:vertical-rl}
+.hero-side.l{left:var(--gut);transform:translateY(-50%) rotate(180deg)}
+.hero-side.r{right:var(--gut);transform:translateY(-50%)}
+.scroll-cue{position:absolute;z-index:5;left:50%;bottom:1.6vh;transform:translateX(-50%);display:flex;align-items:center;gap:8px;font-family:var(--mono);font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--pink3)}
+.scroll-cue svg{animation:drop 1.6s ease-in-out infinite}
+@media (max-width:900px){.hero-over{left:var(--gut);right:var(--gut);width:auto;top:13vh;transform:none}.hero-side{display:none}}
+.sticker-fly{position:absolute;z-index:4;will-change:transform,opacity}
+.sticker{display:inline-flex;align-items:center;gap:.5em;padding:.6em 1.05em;border-radius:14px;font:700 .84rem/1.1 var(--sans);transform:rotate(var(--r));transition:transform .45s cubic-bezier(.34,1.56,.64,1),box-shadow .3s;white-space:nowrap}
+.sticker:hover{transform:rotate(0deg) scale(1.14)}
+.sticker small{font:600 .62rem var(--mono);letter-spacing:.08em;text-transform:uppercase;opacity:.75;display:block}
+.s1{left:calc(50% - 380px);top:33%}.s1 .sticker{background:var(--pink);color:#050407;--r:-9deg;box-shadow:0 0 30px rgba(255,61,139,.6)}
+.s2{left:calc(50% + 250px);top:40%}.s2 .sticker{background:#050407;color:var(--pink);border:1.5px solid var(--pink);--r:7deg;box-shadow:var(--glow)}
+.s3{left:calc(50% - 340px);top:63%}.s3 .sticker{background:var(--pink3);color:#050407;--r:5deg;box-shadow:0 0 26px rgba(255,194,220,.45)}
+.hero-foot{position:absolute;left:var(--gut);right:var(--gut);bottom:3.5vh;display:flex;justify-content:space-between;align-items:flex-end;font-family:var(--mono);font-size:.74rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.hero-foot .role{font-family:var(--display);font-weight:600;font-size:clamp(.85rem,1.2vw,1rem);letter-spacing:-.01em;text-transform:none;color:var(--text)}
+.hero-foot .down{display:flex;flex-direction:column;align-items:center;gap:6px;color:var(--pink)}
+.hero-foot .down svg{animation:drop 1.6s ease-in-out infinite}
+@keyframes drop{50%{transform:translateY(6px)}}
+
+/* 2. PRODUTOS — marquee arrastável */
+.products{padding:clamp(80px,10vw,140px) 0 clamp(70px,8vw,110px);position:relative}
+.p-head{display:grid;grid-template-columns:1.3fr .7fr;gap:32px;align-items:end;margin-bottom:clamp(36px,5vw,60px)}
+.p-head p{font-size:1.05rem}
+.marquee{position:relative;z-index:2;overflow:hidden;cursor:grab;touch-action:pan-y;user-select:none;-webkit-user-select:none;padding:30px 0 40px}
+.marquee.dragging{cursor:grabbing}
+.mq-track{display:flex;gap:30px;width:max-content;will-change:transform;padding-left:var(--gut)}
+.pcard{flex:none;width:min(84vw,520px);border-radius:30px;padding:16px;background:var(--bg-c,var(--card));color:var(--fg,var(--text));text-decoration:none;display:flex;flex-direction:column;gap:18px;box-shadow:var(--glow);transition:transform .5s cubic-bezier(.34,1.56,.64,1),box-shadow .5s;-webkit-user-drag:none;transform:rotate(var(--tilt))}
+.pcard:nth-child(3n+1){--tilt:-1.4deg}.pcard:nth-child(3n+2){--tilt:1.1deg}.pcard:nth-child(3n){--tilt:-.6deg}
+.pcard:hover{transform:rotate(0deg) translateY(-10px) scale(1.035);box-shadow:var(--glow2)}
+.pcard img{-webkit-user-drag:none;pointer-events:none}
+.pc-shot{border-radius:18px;overflow:hidden;aspect-ratio:16/10;background:#fff;position:relative}
+.pc-shot img{width:100%;height:100%;object-fit:cover;object-position:top;transition:transform 1.4s cubic-bezier(.22,1,.36,1)}
+.pcard:hover .pc-shot img{transform:scale(1.08) translateY(-3%)}
+.pc-shot .url{position:absolute;left:12px;bottom:12px;padding:.35em .8em;border-radius:99px;background:rgba(5,4,7,.85);color:var(--pink2);border:1px solid var(--line2);font:600 .72rem var(--mono)}
+.pc-body{padding:0 8px 8px;display:flex;flex-direction:column;gap:12px}
+.pc-top{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.pc-top img{height:34px;width:auto;border-radius:8px}
+.pc-body p{opacity:.85;font-size:.95rem}
+.pc-flow{aspect-ratio:16/10;border-radius:18px;background:#050407;display:grid;place-items:center;padding:14px}
+.pc-flow svg{width:100%;height:auto}
+.pc-flow text{font:600 13px var(--sans);fill:#fff0f6}
+.pc-flow .sub{font:400 10px var(--mono);fill:#b59cab}
+.pcard.hotpink{--bg-c:var(--pink);--fg:#050407}
+.pcard.hotpink .tag{color:#050407;border-color:rgba(5,4,7,.35);background:rgba(5,4,7,.08)}
+.pcard.hotpink .tag i{background:#050407;box-shadow:none}
+.pcard.deep{--bg-c:linear-gradient(160deg,#2a0c1c,#0e0910 70%)}
+.stat{font-family:var(--display);font-weight:900;font-size:3.2rem;line-height:.9;letter-spacing:-.05em}
+.mq-hint{display:flex;justify-content:center;gap:.8em;align-items:center;font-family:var(--mono);font-size:.74rem;letter-spacing:.1em;text-transform:uppercase;color:var(--pink2)}
+
+/* 3. IA */
+.ia{padding:clamp(100px,13vw,170px) 0 clamp(90px,11vw,150px);position:relative}
+.ia-head{margin-bottom:clamp(48px,7vw,96px)}
+.geo{display:grid;grid-template-columns:5fr 7fr;gap:clamp(28px,6vw,96px);align-items:start}
+.geo-text{position:sticky;top:110px;display:flex;flex-direction:column;gap:22px}
+.geo-text h3{font-size:clamp(2rem,3.6vw,3.1rem)}
+.risk{display:flex;gap:8px;flex-wrap:wrap}
+.risk span{padding:.5em .9em;border-radius:10px;font:600 .74rem var(--mono);letter-spacing:.06em;text-transform:uppercase;transition:transform .4s cubic-bezier(.34,1.56,.64,1)}
+.risk span:hover{transform:translateY(-4px) rotate(-3deg)}
+.risk .r1{border:1px solid var(--line2);color:var(--pink3)}
+.risk .r2{background:rgba(255,61,139,.35);color:#fff}
+.risk .r3{background:var(--pink);color:#050407;box-shadow:0 0 22px rgba(255,61,139,.7)}
+.logos{display:flex;align-items:center;gap:22px;background:#fff;border-radius:18px;padding:14px 22px;width:max-content;max-width:100%;box-shadow:var(--glow)}
+.logos img{height:54px;width:auto}
+.logos img.jcc{height:46px}
+.collage{display:grid;grid-template-columns:repeat(6,1fr);gap:18px}
+.ph{position:relative;margin:0;will-change:transform}
+.ph .frame{border-radius:22px;overflow:hidden;background:var(--card);position:relative;box-shadow:0 0 0 1px rgba(255,61,139,.25);transition:transform .6s cubic-bezier(.34,1.56,.64,1),box-shadow .5s}
+.ph:hover .frame{transform:scale(1.035) rotate(-.6deg);box-shadow:var(--glow2)}
+.ph img{width:100%;height:100%;object-fit:cover;transform:scale(1.18);transition:transform 1.6s cubic-bezier(.22,1,.36,1)}
+.ph:hover img{transform:scale(1.1)!important}
+.ph figcaption{margin-top:10px;font-family:var(--mono);font-size:.7rem;letter-spacing:.06em;text-transform:uppercase;color:var(--dim)}
+.ph-a{grid-column:1/5}.ph-a .frame{aspect-ratio:3/4}.ph-a img{object-position:50% 40%}
+.ph-d{grid-column:5/7;align-self:end;margin-bottom:-60px}.ph-d .frame{aspect-ratio:3/4}
+.ph-b{grid-column:2/7;margin-top:40px}.ph-b .frame{aspect-ratio:16/9}
+.ph-c{grid-column:1/6}.ph-c .frame{aspect-ratio:16/9}
+html.js .reveal .frame{clip-path:inset(100% 0 0 0);transition:clip-path 1.3s cubic-bezier(.77,0,.18,1),transform .6s cubic-bezier(.34,1.56,.64,1),box-shadow .5s}
+html.js .reveal.on .frame{clip-path:inset(0 0 0 0)}
+html.js .reveal.on img{transform:scale(1.04)}
+.deepfish{margin-top:clamp(100px,12vw,170px);display:grid;grid-template-columns:1.15fr 1fr;gap:clamp(24px,4vw,64px);align-items:center;padding:clamp(18px,3vw,36px);border-radius:32px;background:rgba(14,9,16,.8);box-shadow:var(--glow);text-decoration:none;color:inherit;transition:transform .6s cubic-bezier(.34,1.56,.64,1),box-shadow .5s}
+.deepfish:hover{transform:scale(1.015);box-shadow:var(--glow2)}
+.df-shot{border-radius:20px;overflow:hidden;aspect-ratio:16/10;position:relative}
+.df-shot img{width:100%;height:100%;object-fit:cover;object-position:top;transition:transform 1.4s cubic-bezier(.22,1,.36,1)}
+.deepfish:hover .df-shot img{transform:scale(1.06)}
+.df-stats{display:flex;gap:22px;flex-wrap:wrap}
+.df-stats div{font-family:var(--display);font-weight:800;font-size:1.5rem;line-height:1;color:var(--pink);text-shadow:var(--neon)}
+.df-stats small{display:block;margin-top:6px;font:400 .66rem var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted);text-shadow:none}
+
+/* 4. ENGENHARIA — acordeão que expande no hover */
+.eng{padding:clamp(100px,12vw,160px) 0;position:relative}
+.acc{display:flex;gap:18px;margin-top:clamp(40px,5vw,72px);min-height:520px}
+.panel{flex:1;min-width:0;border-radius:32px;padding:clamp(22px,3vw,40px);display:flex;flex-direction:column;gap:18px;transition:flex .7s cubic-bezier(.65,0,.35,1),box-shadow .5s;position:relative;overflow:hidden;box-shadow:var(--glow)}
+.panel.p1{background:rgba(14,9,16,.85)}
+.panel.p2{background:linear-gradient(160deg,#3a0c24 0%,#14070f 60%)}
+.panel:hover{box-shadow:var(--glow2)}
+.panel .num{font-family:var(--display);font-weight:900;font-size:clamp(4rem,9vw,8rem);line-height:.8;letter-spacing:-.06em;color:transparent;-webkit-text-stroke:1.5px rgba(255,61,139,.35);position:absolute;right:20px;bottom:10px;transition:transform .7s,-webkit-text-stroke-color .5s}
+.panel p{max-width:52ch;color:var(--muted)}
+.panel .more{display:grid;grid-template-rows:0fr;transition:grid-template-rows .7s cubic-bezier(.65,0,.35,1),opacity .5s;opacity:0}
+.panel .more > div{overflow:hidden;display:flex;flex-direction:column;gap:18px}
+@media (hover:hover) and (min-width:901px){
+  .acc:hover .panel{flex:.75}
+  .acc .panel:hover{flex:1.6}
+  .acc .panel:hover .more{grid-template-rows:1fr;opacity:1}
+  .acc .panel:hover .num{-webkit-text-stroke-color:var(--pink);transform:translateY(-10px) rotate(-4deg)}
+  .acc:not(:hover) .panel.p1 .more{grid-template-rows:1fr;opacity:1}
+}
+@media (hover:none),(max-width:900px){.panel .more{grid-template-rows:1fr;opacity:1}}
+.arch{display:grid;grid-template-columns:1fr auto 1fr auto 1fr;align-items:center;gap:10px}
+.arch div{padding:14px 10px;border-radius:14px;border:1.5px dashed var(--line2);text-align:center;font-size:.85rem;font-weight:700}
+.arch div small{display:block;font:400 .62rem var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.arch span{color:var(--pink)}
+.hover-hint{font-family:var(--mono);font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--pink2);margin-top:auto}
+@media (hover:none),(max-width:900px){.hover-hint{display:none}}
+
+/* 5. LAB */
+.lab{position:relative;height:340vh}
+.lab-sticky{position:sticky;top:0;height:100vh;overflow:hidden;z-index:2}
+.lab-sticky::before{content:"";position:absolute;inset:0;background:radial-gradient(50% 50% at 62% 50%,rgba(255,61,139,.2),transparent 70%);pointer-events:none}
+#diva{position:absolute;inset:0;width:100%;height:100%;display:block}
+.lab-sticky::after{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(90deg,rgba(5,4,7,.9) 0%,rgba(5,4,7,.55) 35%,transparent 60%)}
+.lab-ui{position:relative;z-index:2;height:100%;max-width:var(--max);margin:0 auto;padding:0 var(--gut);display:grid;grid-template-columns:1fr 1fr;align-items:center;pointer-events:none}
+.lab-copy{display:flex;flex-direction:column;gap:22px;max-width:520px}
+.lab-copy h2{font-size:clamp(2rem,4.2vw,3.8rem)}
+.lab-copy p{color:var(--muted)}
+.steps{position:absolute;z-index:2;right:var(--gut);bottom:12vh;list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:10px;text-align:right}
+.steps li{font-family:var(--mono);font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;color:var(--dim);transition:color .4s,transform .4s,text-shadow .4s}
+.steps li.on{color:var(--pink);transform:translateX(-8px);text-shadow:var(--neon)}
+.lab-bar{position:absolute;z-index:2;left:var(--gut);right:var(--gut);bottom:5vh;height:2px;background:rgba(255,61,139,.12)}
+.lab-bar span{display:block;height:100%;background:var(--pink);box-shadow:0 0 12px var(--pink);transform-origin:0 50%;transform:scaleX(0)}
+
+/* 6. JORNADA */
+.journey{padding:clamp(110px,14vw,180px) 0 clamp(110px,12vw,170px);position:relative}
+.about{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(28px,5vw,80px);align-items:center;margin-bottom:clamp(90px,11vw,150px)}
+.about .lead{font-size:clamp(1.05rem,1.4vw,1.22rem);margin-top:1.5em;max-width:54ch}
+.about .lead + .lead{margin-top:1em;color:var(--muted)}
+.duo{display:grid;grid-template-columns:1.2fr 1fr;gap:16px;align-items:end}
+.duo .ph .frame{aspect-ratio:3/4}
+.duo .ph:last-child{margin-bottom:60px}
+.tl-wrap{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(28px,5vw,80px)}
+.tl-side{position:sticky;top:110px;align-self:start;display:flex;flex-direction:column;gap:22px}
+.stack{display:flex;flex-direction:column}
+.stack div{display:grid;grid-template-columns:100px 1fr;gap:12px;font-size:.92rem;border-top:1px solid var(--line2);padding:12px 0;transition:padding .4s,background .4s,color .4s}
+.stack div:hover{padding-left:12px;background:var(--pink);color:#050407}
+.stack div:hover b{color:#050407}
+.stack b{font:400 .68rem var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--pink2);padding-top:3px}
+.tl{position:relative;padding-left:64px;list-style:none;margin:0}
+.tl li{position:relative;padding:0 0 44px}
+.tl li::before{content:"";position:absolute;left:-56px;top:6px;width:16px;height:16px;border-radius:50%;background:var(--bg);border:2.5px solid var(--dim);transition:background .4s,transform .5s cubic-bezier(.34,1.56,.64,1),border-color .4s,box-shadow .4s;z-index:3}
+.tl li.on::before{background:var(--pink);border-color:var(--pink);transform:scale(1.25);box-shadow:0 0 16px var(--pink)}
+.tl li > div{padding:14px 18px;margin:-14px -18px;border-radius:18px;transition:background .4s,transform .5s cubic-bezier(.34,1.56,.64,1),box-shadow .4s}
+.tl li:hover > div{background:rgba(255,61,139,.08);box-shadow:inset 0 0 0 1px var(--line);transform:translateX(8px)}
+.tl time{font-family:var(--mono);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--pink);font-weight:600}
+.tl h4{font-size:clamp(1.05rem,1.5vw,1.3rem);letter-spacing:-.02em;margin:.25em 0 .3em;font-weight:700}
+.tl p{color:var(--muted);font-size:.95rem;max-width:52ch}
+.tl li.now h4::after{content:"●";color:var(--pink);text-shadow:var(--neon);font-size:.6em;margin-left:.5em;vertical-align:middle}
+
+/* FOOTER — sticky reveal */
+.footer{position:sticky;bottom:0;z-index:-1;min-height:88vh;display:flex;flex-direction:column;justify-content:space-between;padding:clamp(100px,11vw,130px) var(--gut) 26px;background:var(--pink);color:#050407}
+.footer .big{font-family:var(--display);font-weight:900;font-size:clamp(2.3rem,6.6vw,6.2rem);line-height:.95;letter-spacing:-.05em;max-width:15ch}
+.footer .big em{color:#fff;text-shadow:none}
+.mail{display:inline-block;margin-top:1.1em;font-family:var(--display);font-size:clamp(1rem,2.4vw,1.8rem);font-weight:600;text-decoration:none;border-bottom:3px solid #050407;padding-bottom:.1em;transition:color .3s}
+.mail:hover{color:#fff}
+.links{display:flex;flex-wrap:wrap;gap:12px;margin-top:2em}
+.footer .btn{background:#050407;color:var(--pink);box-shadow:none}
+.footer .btn.ghost{background:transparent;color:#050407;border-color:#050407}
+.f-bottom{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font-size:.85rem;border-top:1.5px solid #050407;padding-top:18px;margin-top:60px}
+
+/* RESPONSIVO */
+@media (max-width:900px){
+  .nav ul{display:none}
+  .p-head,.geo,.about,.tl-wrap,.deepfish{grid-template-columns:1fr}
+  .geo-text,.tl-side{position:static}
+  .acc{flex-direction:column;min-height:0}
+  .lab-ui{grid-template-columns:1fr;align-items:start;padding-top:100px}
+  .lab-sticky::after{background:linear-gradient(180deg,rgba(5,4,7,.92) 0%,rgba(5,4,7,.55) 45%,transparent 70%)}
+  .s1{left:4%;top:27%}.s2{left:auto;right:4%;top:52%}.s3{left:5%;top:68%}
+  .hero-foot .down{display:none}
+}
+@media (max-width:560px){
+  .collage{gap:10px}.ph-d{margin-bottom:-30px}
+  .arch{grid-template-columns:1fr}.arch span{transform:rotate(90deg);text-align:center}
+  .stack div{grid-template-columns:1fr;gap:4px}
+  .sticker{font-size:.72rem}
+  .hero-foot{font-size:.62rem}
+}
+@media (prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important}
+  html.js .reveal .frame{clip-path:none}
+}
+</style>
+</head>
+<body>
+
+<div class="cursor" aria-hidden="true"><span><b></b></span></div>
+
+<nav class="nav" aria-label="Principal">
+  <a class="logo" href="#top">EQ<span>✦</span></a>
+  <ul>
+    <li><a href="#produtos"><span lang="pt">Produtos</span><span lang="en">Products</span></a></li>
+    <li><a href="#ia"><span lang="pt">IA</span><span lang="en">AI</span></a></li>
+    <li><a href="#eng"><span lang="pt">Engenharia</span><span lang="en">Engineering</span></a></li>
+    <li><a href="#lab">Lab</a></li>
+    <li><a href="#jornada"><span lang="pt">Jornada</span><span lang="en">Journey</span></a></li>
+    <li><a href="#contato"><span lang="pt">Contato</span><span lang="en">Contact</span></a></li>
+  </ul>
+  <div class="lang" role="group" aria-label="Idioma / Language">
+    <button type="button" data-lang-btn="pt" aria-pressed="true">PT</button>
+    <button type="button" data-lang-btn="en" aria-pressed="false">EN</button>
+  </div>
+</nav>
+
+<main id="top">
+  <canvas id="galaxy" aria-hidden="true"></canvas>
+  <svg class="thread" aria-hidden="true"><path class="t-bg"/><path class="t-main"/></svg>
+  <div class="orb" aria-hidden="true"><div class="orb-body"><div class="eyes"><i></i><i></i></div></div></div>
+
+<!-- 1. HERO -->
+<section class="hero" aria-label="Esther Quarterolli">
+  <div class="hero-stage">
+    <h1 class="sr-only">Esther Quarterolli — Full Stack &amp; AI Developer</h1>
+    <div class="halo" aria-hidden="true"></div>
+    <div class="core-label" aria-hidden="true">HARD &amp;<br>SOFT SKILLS<small>✦ <span lang="pt">em órbita</span><span lang="en">in orbit</span> ✦</small></div>
+    <div class="name n1" data-fit="72" data-fit-m="90" aria-hidden="true">ESTHER</div>
+    <div class="me" data-cursor="OI! 👋|HI! 👋">
+      <img src="assets/capa2.webp" alt="Esther Quarterolli sorrindo, de cabelo cacheado e blusa preta" fetchpriority="high">
+    </div>
+    <div class="name n2" data-fit="94" data-fit-m="94" aria-hidden="true"><span class="fill">QUARTER</span>OLLI</div>
+
+    <svg class="ring back" aria-hidden="true"><path/></svg>
+    <svg class="ring front" aria-hidden="true"><path/></svg>
+
+    <div class="hero-note">
+      <span class="lbl"><span lang="pt">Skills em órbita</span><span lang="en">Skills in orbit</span></span>
+      <p>
+        <span lang="pt">Automatizando processos complexos e criando agentes de Inteligência Artificial para alavancar negócios B2B e gerar impacto social.</span>
+        <span lang="en">Architecting scalable web systems and intelligent AI agents for B2B automation and real-world social impact.</span>
+      </p>
+    </div>
+    <div class="legend" aria-hidden="true">
+      <span><i style="background:var(--pink);box-shadow:0 0 10px var(--pink)"></i>Soft skills</span>
+      <span><i style="border:1.5px solid var(--pink)"></i>Hard skills</span>
+    </div>
+    <ul class="sr-only">
+      <li>Hard skills: Python, Django, FastAPI, React, Next.js, TypeScript, n8n, LLMs, RAG, LangChain, CrewAI, Computer Vision, PostgreSQL, Docker</li>
+      <li>Soft skills: liderança de projetos, comunicação, autonomia, mentalidade empreendedora, trabalho em equipe, adaptabilidade, foco em impacto</li>
+    </ul>
+
+    <div class="sticker-fly s1" data-fly="-60 -30 -25"><span class="sticker"><span><small>co-founder</small>SymbionLab</span></span></div>
+    <div class="sticker-fly s2" data-fly="60 -10 30"><span class="sticker"><span><small lang="pt">pesquisa · IA</small><small lang="en">research · AI</small>GeoVision.AI ✦</span></span></div>
+    <div class="sticker-fly s3" data-fly="-50 40 15"><span class="sticker"><span><small>SaaS</small>Kalli Agendia</span></span></div>
+
+    <span class="hero-side l">Full Stack &amp; AI Developer</span>
+    <span class="hero-side r">Rio de Janeiro · BR</span>
+    <div class="scroll-cue"><span lang="pt">role</span><span lang="en">scroll</span>
+      <svg width="12" height="16" viewBox="0 0 14 18" fill="none" aria-hidden="true"><path d="M7 0v16M1 10l6 6 6-6" stroke="currentColor" stroke-width="1.8"/></svg></div>
+  </div>
+</section>
+
+<!-- 2. PRODUTOS -->
+<section class="products" id="produtos" data-thread="0.5 0; 0.9 0.16; 0.1 0.97">
+  <div class="wrap p-head z">
+    <h2>
+      <span lang="pt">Transformando <em>Gargalos Operacionais</em> em Receita</span>
+      <span lang="en">Turning <em>Operational Bottlenecks</em> into Revenue</span>
+    </h2>
+    <p class="muted">
+      <span lang="pt">Produtos no ar, com clientes reais. Arraste para o lado ou só deixe passar.</span>
+      <span lang="en">Live products with real customers. Drag sideways or just let them roll by.</span>
+    </p>
+  </div>
+
+  <div class="marquee" data-cursor="ARRASTE ↔|DRAG ↔">
+    <div class="mq-track">
+      <a class="pcard" href="https://symbionlab.com.br" target="_blank" rel="noopener" draggable="false" data-cursor="ABRIR ↗|OPEN ↗">
+        <div class="pc-shot"><img src="assets/shot-symbion.jpg" alt="Site da SymbionLab" draggable="false" loading="lazy" decoding="async" width="1040" height="650"><span class="url">symbionlab.com.br</span></div>
+        <div class="pc-body">
+          <div class="pc-top"><img src="assets/7.webp" alt="SymbionLab" draggable="false" loading="lazy" decoding="async"><span class="tag"><i></i><span lang="pt">Cofundadora</span><span lang="en">Co-founder</span></span></div>
+          <p>
+            <span lang="pt">Como cofundadora e Full Stack Developer, projeto ecossistemas web sob medida e fluxos de automação avançados (n8n, integrações API) para o setor B2B.</span>
+            <span lang="en">As co-founder and Full Stack Developer, I engineer custom web ecosystems and advanced automation workflows (n8n, API integrations) for the B2B sector.</span>
+          </p>
+        </div>
+      </a>
+      <a class="pcard deep" href="https://kalliagendia.com.br" target="_blank" rel="noopener" draggable="false" data-cursor="ABRIR ↗|OPEN ↗">
+        <div class="pc-shot"><img src="assets/shot-kalli.jpg" alt="Site do Kalli Agendia" draggable="false" loading="lazy" decoding="async" width="1040" height="650"><span class="url">kalliagendia.com.br</span></div>
+        <div class="pc-body">
+          <div class="pc-top"><h3>Kalli Agendia</h3><span class="tag"><i></i>SaaS</span></div>
+          <p>
+            <span lang="pt">Arquitetei um SaaS completo (Software as a Service) para agendamento inteligente. Integração nativa com agentes de IA no WhatsApp e gestão financeira automatizada para negócios locais.</span>
+            <span lang="en">Architected an end-to-end smart scheduling SaaS. Features native WhatsApp AI agent integration and automated financial management for local businesses.</span>
+          </p>
+        </div>
+      </a>
+      <div class="pcard hotpink">
+        <div class="pc-flow">
+          <svg viewBox="0 0 520 300" role="img" aria-label="Fluxo: Webhook para Agente de IA, que distribui para WhatsApp, CRM e Postgres">
+            <g fill="none" stroke="#ff3d8b" stroke-width="2.5"><path d="M150 150 H200"/><path d="M340 150 C380 150 380 60 410 60"/><path d="M340 150 H410"/><path d="M340 150 C380 150 380 240 410 240"/></g>
+            <rect x="20" y="118" width="130" height="64" rx="14" fill="#160c15" stroke="rgba(255,61,139,.35)"/><text x="38" y="146">Webhook</text><text class="sub" x="38" y="164">TRIGGER</text>
+            <rect x="200" y="108" width="140" height="84" rx="16" fill="#3a0c24" stroke="#ff3d8b"/><text x="220" y="144">AI Agent</text><text class="sub" x="220" y="164">LLM · TOOLS · MEMORY</text>
+            <rect x="410" y="34" width="96" height="52" rx="12" fill="#160c15" stroke="rgba(255,61,139,.35)"/><text x="424" y="65">WhatsApp</text>
+            <rect x="410" y="124" width="96" height="52" rx="12" fill="#160c15" stroke="rgba(255,61,139,.35)"/><text x="424" y="155">CRM / API</text>
+            <rect x="410" y="214" width="96" height="52" rx="12" fill="#160c15" stroke="rgba(255,61,139,.35)"/><text x="424" y="245">Postgres</text>
+          </svg>
+        </div>
+        <div class="pc-body">
+          <div class="pc-top"><span class="stat">−80%</span><span class="tag"><i></i>n8n · Docker</span></div>
+          <p>
+            <span lang="pt">Agentes &amp; workflows de IA: ecossistema de automações integrando múltiplas APIs, com 80% menos entrada manual de dados.</span>
+            <span lang="en">AI agents &amp; workflows: an automation ecosystem integrating multiple APIs, cutting manual data entry by 80%.</span>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="mq-hint">← <span lang="pt">arraste para explorar</span><span lang="en">drag to explore</span> →</div>
+</section>
+
+<!-- 3. IA APLICADA -->
+<section class="ia" id="ia" data-thread="0.5 0.02; 0.385 0.4; 0.95 0.97">
+  <div class="wrap z">
+    <header class="ia-head">
+      <h2><span lang="pt">Inteligência Artificial no <em>Mundo Real</em></span><span lang="en">Artificial Intelligence in the <em>Real World</em></span></h2>
+    </header>
+
+    <div class="geo">
+      <div class="geo-text" data-speed="40">
+        <span class="tag"><i></i><span lang="pt">Pesquisadora bolsista · Jovens Cientistas Cariocas</span><span lang="en">Funded researcher · Jovens Cientistas Cariocas</span></span>
+        <h3>GeoVision.AI</h3>
+        <p class="muted">
+          <span lang="pt">Pesquisadora financiada (Jovens Cientistas Cariocas). Criei um sistema em que basta fotografar a estrutura: a IA classifica o nível de risco e o grau de dificuldade e envia tudo para um dashboard da Defesa Civil do Rio de Janeiro, que usa essas informações para fazer a triagem dos chamados.</span>
+          <span lang="en">Funded researcher (Jovens Cientistas Cariocas). I built a system where you just photograph a structure: AI classifies its risk level and difficulty, then sends everything to a dashboard for Rio de Janeiro's Civil Defense, helping them triage incoming calls.</span>
+        </p>
+        <div class="risk" aria-label="Níveis de risco">
+          <span class="r1"><span lang="pt">Risco baixo</span><span lang="en">Low risk</span></span>
+          <span class="r2"><span lang="pt">Risco médio</span><span lang="en">Medium risk</span></span>
+          <span class="r3"><span lang="pt">Risco alto</span><span lang="en">High risk</span></span>
+        </div>
+        <ul class="chips"><li><span lang="pt">Visão Computacional</span><span lang="en">Computer Vision</span></li><li><span lang="pt">Classificação de risco</span><span lang="en">Risk classification</span></li><li>Dashboard</li><li><span lang="pt">Triagem de chamados</span><span lang="en">Call triage</span></li><li><span lang="pt">Defesa Civil RJ</span><span lang="en">Rio Civil Defense</span></li></ul>
+        <div class="logos">
+          <img src="assets/5.jpg" alt="Logo GeoVision.AI" loading="lazy" decoding="async" width="54" height="54">
+          <img class="jcc" src="assets/10.webp" alt="Logo Jovens Cientistas Cariocas" loading="lazy" decoding="async" width="71" height="46">
+        </div>
+      </div>
+
+      <div class="collage">
+        <figure class="ph ph-a reveal" data-speed="-60">
+          <div class="frame"><img src="assets/2.jpg" alt="Esther ao lado da tela de apresentação do GeoVision.AI" loading="lazy"></div>
+          <figcaption><span lang="pt">Apresentação do GeoVision.AI · Engenhão</span><span lang="en">GeoVision.AI pitch · Engenhão</span></figcaption>
+        </figure>
+        <figure class="ph ph-d reveal" data-speed="110">
+          <div class="frame"><img src="assets/1.jpg" alt="Selfie de Esther com a camiseta Jovens Cientistas Cariocas" loading="lazy"></div>
+          <figcaption><span lang="pt">Cientista em formação</span><span lang="en">Scientist in training</span></figcaption>
+        </figure>
+        <figure class="ph ph-b reveal" data-speed="30">
+          <div class="frame"><img src="assets/8.jpg" alt="Esther fotografando uma estrutura degradada durante trabalho de campo" loading="lazy"></div>
+          <figcaption><span lang="pt">Coleta em campo · Penha / Jacarezinho</span><span lang="en">Field data collection · Penha / Jacarezinho</span></figcaption>
+        </figure>
+        <figure class="ph ph-c reveal" data-speed="-30">
+          <div class="frame"><img src="assets/9.jpg" alt="Esther registrando com o celular uma parede com reboco descascando e umidade" loading="lazy"></div>
+          <figcaption><span lang="pt">Patologias reais viram dados de treino</span><span lang="en">Real structural damage becomes training data</span></figcaption>
+        </figure>
+      </div>
+    </div>
+
+    <a class="deepfish" href="https://deep-fish-ai.vercel.app/" target="_blank" rel="noopener" data-cursor="ABRIR ↗|OPEN ↗">
+      <div class="df-shot"><img src="assets/shot-deepfish.jpg" alt="Site do DeepFish: reconhecimento inteligente de espécies de aquário com detecção YOLO" loading="lazy" decoding="async" width="1040" height="650"></div>
+      <div style="display:flex;flex-direction:column;gap:18px">
+        <span class="tag"><i></i>FuzzyLab · FAETERJ</span>
+        <h3>DeepFish-AI</h3>
+        <p class="muted">
+          <span lang="pt">Colaboradora no desenvolvimento de modelos de Visão Computacional acadêmica junto ao FuzzyLab (FAETERJ).</span>
+          <span lang="en">Collaborator in academic Computer Vision models development at FuzzyLab.</span>
+        </p>
+        <div class="df-stats">
+          <div>7<small><span lang="pt">espécies</span><span lang="en">species</span></small></div>
+          <div>95%+<small><span lang="pt">precisão</span><span lang="en">accuracy</span></small></div>
+          <div>YOLO<small><span lang="pt">detecção</span><span lang="en">detection</span></small></div>
+        </div>
+        <span class="btn ghost" style="align-self:flex-start">deep-fish-ai.vercel.app ↗</span>
+      </div>
+    </a>
+  </div>
+</section>
+
+<!-- 4. ENGENHARIA -->
+<section class="eng" id="eng" data-thread="0.05 0.06; 0.96 0.94">
+  <div class="wrap z">
+    <h2><span lang="pt">Engenharia Robusta para <em>Alta Demanda</em></span><span lang="en">Robust Engineering for <em>High Demand</em></span></h2>
+
+    <div class="acc">
+      <article class="panel p1" data-stagger>
+        <span class="tag"><i></i><span lang="pt">Estágio · FAETEC / DESUP</span><span lang="en">Internship · FAETEC / DESUP</span></span>
+        <h3>Harpia</h3>
+        <p>
+          <span lang="pt">Desenvolvimento do sistema institucional de gestão para a Diretoria de Ensino Superior (FAETEC/DESUP). Arquitetura escalável utilizando Django, PostgreSQL, React e HTMX para eliminar silos de dados.</span>
+          <span lang="en">Developed an institutional management system for a state-level education department. Built a scalable architecture using Django, PostgreSQL, React, and HTMX to eliminate data silos.</span>
+        </p>
+        <div class="more"><div>
+          <div class="arch" aria-label="React e HTMX, Django, PostgreSQL">
+            <div>React · HTMX<small>Interface</small></div><span>→</span>
+            <div>Django<small>API</small></div><span>→</span>
+            <div>PostgreSQL<small><span lang="pt">Dados</span><span lang="en">Data</span></small></div>
+          </div>
+          <ul class="chips"><li>Django</li><li>PostgreSQL</li><li>React</li><li>HTMX</li><li>Node.js</li></ul>
+        </div></div>
+        <span class="hover-hint"><span lang="pt">passe o mouse ↗</span><span lang="en">hover ↗</span></span>
+        <span class="num" aria-hidden="true">01</span>
+      </article>
+
+      <article class="panel p2" data-stagger>
+        <span class="tag"><i></i><span lang="pt">Desenvolvedora PJ · 2024 – 2026</span><span lang="en">Contractor · 2024 – 2026</span></span>
+        <h3>M2De</h3>
+        <p>
+          <span lang="pt">Atuação como desenvolvedora PJ, liderando a implementação de fluxos de automação corporativa e integração de LLMs para otimização de rotinas.</span>
+          <span lang="en">Contractor Software Engineer leading the implementation of enterprise automation workflows and LLM integrations to optimize business routines.</span>
+        </p>
+        <div class="more"><div>
+          <div class="arch" aria-label="Gatilho, n8n com LLM, sistemas">
+            <div>Trigger<small>Webhook · Cron</small></div><span>→</span>
+            <div>n8n + LLM<small><span lang="pt">Orquestração</span><span lang="en">Orchestration</span></small></div><span>→</span>
+            <div>PHP / JS<small>APIs · DB</small></div>
+          </div>
+          <ul class="chips"><li>n8n</li><li>LLMs</li><li>PHP</li><li>JavaScript</li><li>MySQL</li><li>APIs REST</li></ul>
+        </div></div>
+        <span class="hover-hint"><span lang="pt">passe o mouse ↗</span><span lang="en">hover ↗</span></span>
+        <span class="num" aria-hidden="true">02</span>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- 5. LAB · DIVA OS -->
+<section class="lab" id="lab" data-thread="0.5 0.02; 0.66 0.5; 0.5 0.985">
+  <div class="lab-sticky">
+    <canvas id="diva" aria-label="Globo 3D da Diva OS que gira e se desconstrói conforme a rolagem" role="img"></canvas>
+    <div class="lab-ui">
+      <div class="lab-copy">
+        <h2>
+          <span lang="pt">Explorando as Fronteiras da Interação <em>(Diva OS)</em></span>
+          <span lang="en">Exploring the Frontiers of Interaction <em>(Diva OS)</em></span>
+        </h2>
+        <p>
+          <span lang="pt">Minha assistente virtual imersiva. Uma interface 3D construída com React Three Fiber, conectada via WebSockets a um backend FastAPI com reconhecimento de voz e Edge TTS.</span>
+          <span lang="en">My immersive virtual assistant. A 3D interface built with React Three Fiber, connected via WebSockets to a FastAPI backend featuring voice recognition and Edge TTS.</span>
+        </p>
+      </div>
+    </div>
+    <ol class="steps" aria-hidden="true">
+      <li>01 · React Three Fiber</li>
+      <li>02 · WebSockets ⇄ FastAPI</li>
+      <li>03 · Speech-to-Text + Edge TTS</li>
+    </ol>
+    <div class="lab-bar" aria-hidden="true"><span></span></div>
+  </div>
+</section>
+
+<!-- 6. JORNADA -->
+<section class="journey" id="jornada" data-thread="0.06 0.03">
+  <div class="wrap z">
+    <div class="about">
+      <div>
+        <h2><span lang="pt">O Mindset <em>Automador</em></span><span lang="en">The <em>Automator</em> Mindset</span></h2>
+        <p class="lead">
+          <span lang="pt">Graduanda em Análise e Desenvolvimento de Sistemas (FAETERJ). Uno o rigor acadêmico com a velocidade de execução de uma startup. Da ideação ao deploy, foco em entregar código limpo e soluções que resolvem problemas reais.</span>
+          <span lang="en">Systems Analysis and Development undergraduate. I merge academic rigor with startup execution velocity. From ideation to deployment, I focus on shipping clean code and solutions that solve real-world problems.</span>
+        </p>
+        <p class="lead">
+          <span lang="pt">Hoje sou estagiária Full Stack na FAETEC Rio, construindo sistemas em Django e Node.js.</span>
+          <span lang="en">I'm currently a Full Stack intern at FAETEC Rio, building systems with Django and Node.js.</span>
+        </p>
+      </div>
+      <div class="duo">
+        <figure class="ph reveal" data-speed="-40">
+          <div class="frame"><img src="assets/3.jpg" alt="Esther no Rio Innovation Week, com o Museu do Amanhã ao fundo" loading="lazy"></div>
+          <figcaption>Rio Innovation Week</figcaption>
+        </figure>
+        <figure class="ph reveal" data-speed="60">
+          <div class="frame"><img src="assets/6.jpg" alt="Esther ao lado de um robô humanoide no Rio Innovation Week" loading="lazy"></div>
+          <figcaption><span lang="pt">Conhecendo o futuro de perto</span><span lang="en">Meeting the future up close</span></figcaption>
+        </figure>
+      </div>
+    </div>
+
+    <div class="tl-wrap">
+      <aside class="tl-side">
+        <h3><span lang="pt">Formação &amp; <em>trajetória</em></span><span lang="en">Education &amp; <em>path</em></span></h3>
+        <div class="stack" data-stagger>
+          <div><b><span lang="pt">IA</span><span lang="en">AI</span></b><span>LLMs, RAG, LangChain / CrewAI, n8n, Computer Vision</span></div>
+          <div><b>Back-end</b><span>Python (Django / FastAPI), Node.js, APIs REST, PHP, Java</span></div>
+          <div><b>Front-end</b><span>React, Next.js, TypeScript, Three.js, Figma</span></div>
+          <div><b><span lang="pt">Dados</span><span lang="en">Data</span></b><span>PostgreSQL, MySQL, Supabase</span></div>
+          <div><b>Infra</b><span>Docker, Git / GitHub</span></div>
+        </div>
+      </aside>
+
+      <ol class="tl">
+        <li><div><time>2021 – 2023</time><h4><span lang="pt">Técnico em Informática · CIOB</span><span lang="en">IT Technician · CIOB</span></h4><p><span lang="pt">Centro de Integração Objetivo — onde a programação virou profissão.</span><span lang="en">Centro de Integração Objetivo — where coding became a career.</span></p></div></li>
+        <li><div><time>2024 · Jan</time><h4><span lang="pt">Agentes &amp; Workflows de IA</span><span lang="en">AI Agents &amp; Workflows</span></h4><p><span lang="pt">Projeto pessoal com n8n e Docker: −80% de entrada manual de dados.</span><span lang="en">Personal project with n8n and Docker: −80% manual data entry.</span></p></div></li>
+        <li><div><time>2024 · Mar</time><h4><span lang="pt">M2De · Desenvolvedora de IA &amp; Full Stack</span><span lang="en">M2De · AI &amp; Full Stack Developer</span></h4><p><span lang="pt">Automação corporativa, LLMs e aplicações PHP/JS.</span><span lang="en">Enterprise automation, LLMs and PHP/JS applications.</span></p></div></li>
+        <li><div><time>2024 · Jul</time><h4><span lang="pt">Tecnólogo em ADS · FAETERJ</span><span lang="en">Systems Analysis &amp; Development · FAETERJ</span></h4><p><span lang="pt">Graduação em andamento — Rio, Quintino.</span><span lang="en">Undergraduate degree in progress — Rio, Quintino.</span></p></div></li>
+        <li><div><time>2025 · Set</time><h4>Kalli Agendia · SymbionLab · FuzzyLab</h4><p><span lang="pt">SaaS B2B com agente de IA no WhatsApp, cofundação da SymbionLab e Visão Computacional acadêmica.</span><span lang="en">B2B SaaS with a WhatsApp AI agent, co-founding SymbionLab and academic Computer Vision.</span></p></div></li>
+        <li><div><time>2026</time><h4>Jovens Cientistas Cariocas · GeoVision.AI</h4><p><span lang="pt">Pesquisa financiada: IA que classifica risco estrutural por foto e organiza a triagem da Defesa Civil.</span><span lang="en">Funded research: AI that classifies structural risk from a photo and organizes Civil Defense triage.</span></p></div></li>
+        <li><div><time>2026</time><h4><span lang="pt">Certificações</span><span lang="en">Certifications</span></h4><p><span lang="pt">Backend com Python (Luizalabs · DIO) · n8n: Agentes de IA, Automação e Voz (Udemy) · Cientista de Dados (Udemy).</span><span lang="en">Python Backend (Luizalabs · DIO) · n8n: AI, Automation &amp; Voice Agents (Udemy) · Data Scientist (Udemy).</span></p></div></li>
+        <li class="now"><div><time>2026 · Mai → <span lang="pt">hoje</span><span lang="en">now</span></time><h4><span lang="pt">Estagiária Full Stack · FAETEC Rio</span><span lang="en">Full Stack Intern · FAETEC Rio</span></h4><p><span lang="pt">APIs REST e aplicações web com Django e Node.js — incluindo o Harpia.</span><span lang="en">REST APIs and web apps with Django and Node.js — including Harpia.</span></p></div></li>
+      </ol>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="footer" id="contato">
+  <div>
+    <p class="big">
+      <span lang="pt">Vamos construir o próximo nível da sua <em>operação?</em></span>
+      <span lang="en">Let's engineer the next level of your <em>operations?</em></span>
+    </p>
+    <a class="mail" href="mailto:estherquarterollii@gmail.com" data-cursor="ESCREVER ✉|WRITE ✉">estherquarterollii@gmail.com</a>
+    <div class="links">
+      <a class="btn" href="https://www.linkedin.com/in/esther-quarterolli-789624217/" target="_blank" rel="noopener" data-cursor="ABRIR ↗|OPEN ↗">LinkedIn ↗</a>
+      <a class="btn ghost" href="https://github.com/estherquarterolli" target="_blank" rel="noopener" data-cursor="ABRIR ↗|OPEN ↗">GitHub ↗</a>
+    </div>
+  </div>
+  <div class="f-bottom">
+    <span>© 2026 Esther Quarterolli · Rio de Janeiro, Brasil</span>
+    <span>Full Stack &amp; AI Developer</span>
+  </div>
+</footer>
+
+<script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/motion@11.11.13/dist/motion.js"></script>
+<script>
+(() => {
+  const html = document.documentElement;
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const $ = (s, r = document) => r.querySelector(s);
+  const $$ = (s, r = document) => [...r.querySelectorAll(s)];
+  const clamp = (v, a = 0, b = 1) => Math.min(b, Math.max(a, v));
+  const lerp = (a, b, t) => a + (b - a) * t;
+  const ease = t => t < .5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+  html.classList.add('js');
+
+  /* ---------- Idioma ---------- */
+  let measureSoon = () => {};
+  function setLang(l) {
+    html.dataset.lang = l; html.lang = l === 'pt' ? 'pt-BR' : 'en';
+    $$('[data-lang-btn]').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.langBtn === l)));
+    try { localStorage.setItem('eq-lang', l); } catch (e) {}
+    measureSoon();
+  }
+  let saved = null; try { saved = localStorage.getItem('eq-lang'); } catch (e) {}
+  setLang(saved || ((navigator.language || 'pt').toLowerCase().startsWith('pt') ? 'pt' : 'en'));
+  $$('[data-lang-btn]').forEach(b => b.addEventListener('click', () => setLang(b.dataset.langBtn)));
+
+  /* ---------- Lenis: scroll amanteigado ---------- */
+  const lenis = (!reduce && window.Lenis) ? new Lenis({ lerp: 0.085, smoothWheel: true }) : null;
+  $$('a[href^="#"]').forEach(a => a.addEventListener('click', e => {
+    const t = $(a.getAttribute('href')); if (!t) return;
+    e.preventDefault();
+    lenis ? lenis.scrollTo(t, { duration: 1.6 }) : t.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth' });
+  }));
+
+  /* ---------- Galáxia rosa de fundo ---------- */
+  const gc = $('#galaxy'), gx = gc.getContext('2d');
+  let GW = 0, GH = 0, stars = [], shoots = [], nextShoot = 2500;
+  function gResize() {
+    const small = innerWidth < 900;
+    const dpr = small ? 1 : Math.min(devicePixelRatio || 1, 1.5);
+    GW = innerWidth; GH = innerHeight;
+    gc.width = GW * dpr; gc.height = GH * dpr; gx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    const n = Math.min(small ? 140 : 320, Math.round(GW * GH / 3800));
+    stars = Array.from({ length: n }, () => ({ x: Math.random() * GW, y: Math.random() * GH, z: Math.random(), r: Math.random() * 1.2 + .25, tw: Math.random() * 6.28, pink: Math.random() < .4 }));
+  }
+  const nebulas = [[.15, .2, .5], [.85, .65, .55], [.5, 1.1, .45], [.2, 1.6, .5]];
+  function galaxy(t, sy) {
+    gx.clearRect(0, 0, GW, GH);
+    const span = GH * 2;
+    nebulas.forEach(([bx, by, s], i) => {
+      const x = bx * GW + Math.sin(t * .00009 + i * 2) * 60;
+      const y = (((by * GH - sy * (0.06 + i * .02)) % span) + span) % span - GH * .4;
+      const R = s * Math.max(GW, GH);
+      const g = gx.createRadialGradient(x, y, 0, x, y, R);
+      g.addColorStop(0, 'rgba(255,61,139,0.16)'); g.addColorStop(.45, 'rgba(255,31,120,0.05)'); g.addColorStop(1, 'rgba(255,61,139,0)');
+      gx.fillStyle = g; gx.fillRect(0, 0, GW, GH);
+    });
+    for (const s of stars) {
+      const y = (((s.y - sy * (0.04 + s.z * 0.22)) % GH) + GH) % GH;
+      gx.globalAlpha = .25 + .75 * Math.abs(Math.sin(s.tw + t * .0011 * (.4 + s.z)));
+      gx.fillStyle = s.pink ? '#ff7ab4' : '#fff4f9';
+      gx.beginPath(); gx.arc(s.x, y, s.r * (.6 + s.z * .9), 0, 6.283); gx.fill();
+    }
+    gx.globalAlpha = 1;
+    if (!reduce && t > nextShoot) {
+      nextShoot = t + 3500 + Math.random() * 5000;
+      shoots.push({ x: Math.random() * GW * .8 + GW * .1, y: Math.random() * GH * .4, vx: -(3 + Math.random() * 3), vy: 2 + Math.random() * 2, life: 1 });
+    }
+    shoots = shoots.filter(s => s.life > 0);
+    for (const s of shoots) {
+      s.x += s.vx * 2.2; s.y += s.vy * 2.2; s.life -= .012;
+      const g = gx.createLinearGradient(s.x, s.y, s.x - s.vx * 28, s.y - s.vy * 28);
+      g.addColorStop(0, `rgba(255,214,232,${s.life})`); g.addColorStop(1, 'rgba(255,61,139,0)');
+      gx.strokeStyle = g; gx.lineWidth = 2; gx.beginPath(); gx.moveTo(s.x, s.y); gx.lineTo(s.x - s.vx * 28, s.y - s.vy * 28); gx.stroke();
+    }
+  }
+
+  /* ---------- Nome que se ajusta à largura ---------- */
+  function fit() {
+    const W = document.documentElement.clientWidth, mob = W < 700;
+    $$('[data-fit]').forEach(el => {
+      el.style.fontSize = '100px';
+      const target = W * parseFloat(mob ? el.dataset.fitM : el.dataset.fit) / 100;
+      el.style.fontSize = (100 * target / el.scrollWidth) + 'px';
+    });
+  }
+
+  /* ---------- 1. HERO: nome se abre e as skills entram em órbita ---------- */
+  const hero = $('.hero'), stage = $('.hero-stage'), halo = $('.halo'), me = $('.me'), n1 = $('.n1'), n2 = $('.n2');
+  const note = $('.hero-note'), legend = $('.legend'), rings = $$('.ring'), coreLabel = $('.core-label');
+  const sides = $$('.hero-side, .scroll-cue');
+  const flies = $$('.sticker-fly').map(el => ({ el, v: el.dataset.fly.split(' ').map(Number) }));
+  const SOFT = [['Liderança de projetos', 'Project leadership'], ['Comunicação', 'Communication'], ['Autonomia', 'Autonomy'], ['Mentalidade empreendedora', 'Entrepreneurial mindset'], ['Trabalho em equipe', 'Teamwork'], ['Adaptabilidade', 'Adaptability'], ['Foco em impacto', 'Impact-driven']];
+  const HARD = ['Python', 'Django', 'FastAPI', 'React · Next.js', 'TypeScript', 'n8n', 'LLMs · RAG', 'LangChain · CrewAI', 'Computer Vision', 'PostgreSQL', 'Docker'];
+  const pills = [];
+  SOFT.forEach((s, i) => {
+    const el = document.createElement('div'); el.className = 'pill soft'; el.setAttribute('aria-hidden', 'true');
+    el.innerHTML = `<b><span lang="pt">${s[0]}</span><span lang="en">${s[1]}</span></b>`;
+    stage.appendChild(el); pills.push({ el, ring: 0, i, n: SOFT.length });
+  });
+  HARD.forEach((s, i) => {
+    const el = document.createElement('div'); el.className = 'pill hard'; el.setAttribute('aria-hidden', 'true');
+    el.innerHTML = `<b>${s}</b>`;
+    stage.appendChild(el); pills.push({ el, ring: 1, i, n: HARD.length });
+  });
+  let orbit = null;
+  const opt = (r, a) => {
+    const x = r.rx * Math.cos(a), y = r.ry * Math.sin(a), c = Math.cos(orbit.tilt), s = Math.sin(orbit.tilt);
+    return [orbit.cx + x * c - y * s, orbit.cy + x * s + y * c];
+  };
+  function measureOrbit() {
+    const W = document.documentElement.clientWidth, H = innerHeight, mob = W < 700 || H > W * 1.1; // celular e tablet em pé
+    const coreY = halo.offsetTop + halo.offsetHeight / 2; // órbita centrada no planeta
+    orbit = { cx: W / 2, cy: coreY, tilt: (mob ? -6 : -8) * Math.PI / 180,
+      rings: [{ rx: mob ? W * 0.25 : Math.min(W * 0.25, 380) }, { rx: mob ? W * 0.37 : Math.min(W * 0.41, 610) }] };
+    // no celular as órbitas ficam "em pé" (elipse vertical) para caber entre o texto e a legenda
+    orbit.rings.forEach((r, i) => { r.ry = mob ? H * (i ? 0.27 : 0.165) : r.rx * 0.3; });
+    coreLabel.style.top = coreY + 'px';
+    const seg = (r, a0, a1) => { let d = ''; for (let k = 0; k <= 72; k++) { const [x, y] = opt(r, a0 + (a1 - a0) * k / 72); d += (k ? 'L' : 'M') + x.toFixed(1) + ',' + y.toFixed(1); } return d; };
+    rings.forEach(svg => svg.setAttribute('viewBox', `0 0 ${W} ${H}`));
+    rings[0].firstElementChild.setAttribute('d', orbit.rings.map(r => seg(r, Math.PI, 2 * Math.PI)).join(''));
+    rings[1].firstElementChild.setAttribute('d', orbit.rings.map(r => seg(r, 0, Math.PI)).join(''));
+  }
+  function heroTick(t) {
+    const H = innerHeight;
+    const r = hero.getBoundingClientRect();
+    if (r.bottom < -50 || !orbit) return;
+    const p = clamp(-r.top / (r.height - H));
+    const e = ease(clamp(p / 0.3));            // fase 1: nome abre, adesivos voam
+    const z = ease(clamp((p - 0.08) / 0.32));  // zoom out da foto até sumir no planeta
+    const mob = innerWidth < 700 || H > innerWidth * 1.1;
+    halo.style.transform = `scale(${lerp(1, mob ? 0.48 : 0.56, z)})`;
+    me.style.transform = `translateX(-50%) scale(${lerp(1, 0.18, z)})`;
+    me.style.opacity = clamp(1 - (z - 0.45) / 0.45);
+    me.style.pointerEvents = z > 0.5 ? 'none' : '';
+    coreLabel.style.opacity = clamp((z - 0.75) / 0.25);
+    coreLabel.style.transform = `translate(-50%,-50%) scale(${lerp(0.6, 1, clamp((z - 0.75) / 0.25))})`;
+    sides.forEach(s => { s.style.opacity = clamp(1 - e * 3); });
+    const ro = clamp((p - 0.2) / 0.15);        // fase 2: anéis e skills
+    rings.forEach(s => { s.style.opacity = ro; });
+    const no = clamp((p - 0.32) / 0.15);
+    note.style.opacity = legend.style.opacity = no;
+    note.style.transform = `translateY(${(1 - no) * 20}px)`;
+    const spin = reduce ? 0 : t * 0.00012;
+    pills.forEach(pl => {
+      const rg = orbit.rings[pl.ring], dir = pl.ring ? 1 : -1;
+      const a = pl.i / pl.n * Math.PI * 2 + dir * (p * Math.PI * 1.4 + spin);
+      const [x, y] = opt(rg, a), depth = (Math.sin(a) + 1) / 2;
+      const vis = clamp((p - 0.22 - pl.i * 0.01 - pl.ring * 0.04) / 0.1);
+      pl.el.style.transform = `translate(${x.toFixed(1)}px,${y.toFixed(1)}px) translate(-50%,-50%) scale(${((0.74 + depth * 0.36) * (0.5 + 0.5 * vis)).toFixed(3)})`;
+      pl.el.style.opacity = (vis * (0.4 + 0.6 * depth)).toFixed(3);
+      pl.el.style.zIndex = Math.sin(a) > 0 ? 5 : 0;
+      pl.el.style.pointerEvents = vis > 0.6 ? 'auto' : 'none';
+    });
+    n1.style.transform = `translateX(calc(-50% - ${e * 45}vw)) scale(${1 - e * 0.35})`;
+    n2.style.transform = `translateX(calc(-50% + ${e * 45}vw)) scale(${1 - e * 0.35})`;
+    n1.style.opacity = n2.style.opacity = clamp(1 - e * 1.3);
+    flies.forEach(({ el, v }) => {
+      el.style.transform = `translate(${v[0] * e}vw, ${v[1] * e}vh) rotate(${v[2] * e}deg)`;
+      el.style.opacity = clamp(1 - e * 1.6);
+    });
+  }
+
+  /* ---------- 2. Marquee automático + arrastável ---------- */
+  const mq = $('.marquee'), track = $('.mq-track');
+  const originals = [...track.children];
+  for (let k = 0; k < 2; k++) originals.forEach(c => {
+    const cl = c.cloneNode(true); cl.setAttribute('aria-hidden', 'true');
+    if (cl.tagName === 'A') cl.tabIndex = -1;
+    track.appendChild(cl);
+  });
+  const AUTO = -0.07; // px por ms
+  let mx = 0, mv = AUTO, setW = 1, drag = null, moved = 0, hoverCard = false;
+  const measureMarquee = () => { setW = track.children[originals.length].offsetLeft - track.children[0].offsetLeft || 1; };
+  track.addEventListener('pointerdown', e => { drag = { last: e.clientX, t: performance.now(), id: e.pointerId, cap: false }; moved = 0; });
+  addEventListener('pointermove', e => {
+    if (!drag || e.pointerId !== drag.id) return;
+    const dx = e.clientX - drag.last, now = performance.now();
+    drag.last = e.clientX; moved += Math.abs(dx);
+    if (moved > 6 && !drag.cap) { drag.cap = true; mq.classList.add('dragging'); try { track.setPointerCapture(e.pointerId); } catch (err) {} }
+    if (drag.cap) { mx += dx; mv = dx / Math.max(1, now - drag.t); }
+    drag.t = now;
+  });
+  const endDrag = () => { if (!drag) return; drag = null; mq.classList.remove('dragging'); };
+  addEventListener('pointerup', endDrag); addEventListener('pointercancel', endDrag);
+  track.addEventListener('click', e => { if (moved > 6) { e.preventDefault(); e.stopPropagation(); } }, true);
+  track.addEventListener('pointerover', e => { hoverCard = !!e.target.closest('.pcard'); });
+  track.addEventListener('pointerleave', () => { hoverCard = false; });
+  function marqueeTick(dt, scrollVel) {
+    if (!drag || !drag.cap) {
+      const target = hoverCard ? 0 : AUTO;
+      mv += (target - mv) * Math.min(1, dt * 0.004);
+      mx += mv * dt - scrollVel * 0.6;
+    }
+    if (mx <= -setW) mx += setW;
+    if (mx > 0) mx -= setW;
+    track.style.transform = `translate3d(${mx}px,0,0)`;
+  }
+
+  /* ---------- 3. Fio neon que liga as seções + bolinha com olhinhos ---------- */
+  const main = $('main'), svg = $('.thread'), paths = $$('.thread path'), pMain = $('.t-main'), orb = $('.orb'), eyes = $('.eyes');
+  let samples = [], ymax = [], total = 0, dots = [];
+  const STEP = 8;
+  function anchors() {
+    const W = document.documentElement.clientWidth, top0 = main.getBoundingClientRect().top + scrollY;
+    const A = el => { const r = el.getBoundingClientRect(); return { l: r.left + scrollX, t: r.top + scrollY - top0, w: r.width, h: r.height }; };
+    const pts = [];
+    $$('[data-thread]').forEach(el => {
+      const b = A(el);
+      el.dataset.thread.split(';').forEach(s => {
+        let [fx, fy] = s.trim().split(/\s+/).map(Number);
+        if (W <= 900) fx = fx < 0.5 ? 0.035 : 0.965; // no celular o fio corre pelas bordas
+        pts.push([fx * W, b.t + fy * b.h]);
+      });
+    });
+    const lis = $$('.tl li');
+    if (lis.length) {
+      const x = A($('.tl')).l + 16, first = A(lis[0]).t + 14, last = A(lis[lis.length - 1]).t + 14;
+      for (let i = 0; i <= 6; i++) pts.push([x, lerp(first, last, i / 6)]);
+      pts.push([x, last + 160]);
+      dots = lis.map(li => ({ li, y: A(li).t + 14 }));
+    }
+    pts.sort((a, b) => a[1] - b[1]);
+    return pts;
+  }
+  function curve(p) {
+    let d = `M${p[0][0].toFixed(1)},${p[0][1].toFixed(1)}`;
+    for (let i = 0; i < p.length - 1; i++) {
+      const p0 = p[i - 1] || p[i], p1 = p[i], p2 = p[i + 1], p3 = p[i + 2] || p2;
+      const c1 = [p1[0] + (p2[0] - p0[0]) / 6, p1[1] + (p2[1] - p0[1]) / 6];
+      const c2 = [p2[0] - (p3[0] - p1[0]) / 6, p2[1] - (p3[1] - p1[1]) / 6];
+      d += ` C${c1[0].toFixed(1)},${c1[1].toFixed(1)} ${c2[0].toFixed(1)},${c2[1].toFixed(1)} ${p2[0].toFixed(1)},${p2[1].toFixed(1)}`;
+    }
+    return d;
+  }
+  function measureThread() {
+    const W = document.documentElement.clientWidth, H = main.offsetHeight;
+    svg.setAttribute('viewBox', `0 0 ${W} ${H}`);
+    svg.style.height = H + 'px';
+    const d = curve(anchors());
+    paths.forEach(p => p.setAttribute('d', d));
+    total = pMain.getTotalLength();
+    pMain.style.strokeDasharray = total;
+    samples = []; ymax = []; let m = -Infinity;
+    for (let l = 0; l <= total; l += STEP) { const pt = pMain.getPointAtLength(l); samples.push([pt.x, pt.y]); m = Math.max(m, pt.y); ymax.push(m); }
+  }
+  function threadTick(scrollVel) {
+    if (!samples.length) return;
+    const top0 = main.getBoundingClientRect().top + scrollY;
+    const target = scrollY - top0 + innerHeight * 0.58;
+    let lo = 0, hi = ymax.length - 1;
+    while (lo < hi) { const mid = (lo + hi) >> 1; if (ymax[mid] < target) lo = mid + 1; else hi = mid; }
+    const len = reduce ? total : Math.min(total, lo * STEP);
+    pMain.style.strokeDashoffset = total - len;
+    orb.classList.toggle('show', !reduce && target > samples[0][1] && lo < samples.length - 1);
+    const [x, y] = samples[lo];
+    const a = samples[Math.max(0, lo - 3)], b = samples[Math.min(samples.length - 1, lo + 3)];
+    let dx = b[0] - a[0], dy = b[1] - a[1]; const dl = Math.hypot(dx, dy) || 1; dx /= dl; dy /= dl;
+    const dir = scrollVel < -0.5 ? -1 : 1;
+    eyes.style.setProperty('--lx', (dx * 2 * dir).toFixed(2) + 'px');
+    eyes.style.setProperty('--ly', (dy * 2 * dir).toFixed(2) + 'px');
+    const sq = clamp(Math.abs(scrollVel) * 0.012, 0, 0.35);
+    const ang = Math.atan2(dy, dx) * 180 / Math.PI;
+    orb.style.transform = `translate(${x}px,${y}px)`;
+    orb.firstElementChild.style.transform = `rotate(${ang}deg) scale(${1 + sq}, ${1 - sq * 0.6}) rotate(${-ang}deg)`;
+    dots.forEach(d => d.li.classList.toggle('on', target >= d.y));
+  }
+
+  /* ---------- Cursor ---------- */
+  const cur = $('.cursor'), curLbl = $('.cursor b');
+  const fine = matchMedia('(hover:hover) and (pointer:fine)').matches;
+  let cx = -100, cy = -100, tx = -100, ty = -100;
+  if (fine) {
+    addEventListener('pointermove', e => { tx = e.clientX; ty = e.clientY; });
+    document.addEventListener('pointerover', e => {
+      const t = e.target.closest('[data-cursor]');
+      cur.classList.toggle('big', !!t);
+      if (t) { const [pt, en] = t.dataset.cursor.split('|'); curLbl.textContent = html.dataset.lang === 'en' ? en : pt; }
+    });
+  }
+
+  /* ---------- Motion (engine do Framer Motion): parallax, reveal, stagger ---------- */
+  const M = window.Motion;
+  if (M && !reduce) {
+    const { scroll, animate, inView, stagger } = M;
+    $$('[data-speed]').forEach(el => {
+      if (innerWidth <= 900 && el.classList.contains('geo-text')) return;
+      const s = parseFloat(el.dataset.speed);
+      scroll(p => { el.style.transform = `translate3d(0, ${(0.5 - p) * s}px, 0)`; }, { target: el, offset: ['start end', 'end start'] });
+    });
+    inView('.reveal', el => { (el.target || el).classList.add('on'); }, { amount: 0.2 });
+    $$('[data-stagger]').forEach(box => {
+      const kids = [...box.children].filter(k => !k.classList.contains('num'));
+      kids.forEach(k => { k.style.opacity = 0; k.style.transform = 'translateY(26px)'; });
+      inView(box, () => {
+        animate(kids, { opacity: [0, 1], transform: ['translateY(26px)', 'translateY(0px)'] }, { delay: stagger(0.08), duration: 0.6, ease: [0.22, 1, 0.36, 1] });
+        $$('.chips li, .arch > *', box).forEach((c, i) => {
+          c.style.opacity = 0;
+          animate(c, { opacity: [0, 1], transform: ['scale(.8)', 'scale(1)'] }, { delay: 0.35 + i * 0.05, duration: 0.45 });
+        });
+      }, { amount: 0.25 });
+    });
+  } else {
+    $$('.reveal').forEach(el => el.classList.add('on'));
+  }
+
+  /* ---------- Medidas ---------- */
+  let mTimer;
+  function measureAll() { fit(); gResize(); measureOrbit(); measureMarquee(); measureThread(); }
+  measureSoon = () => { clearTimeout(mTimer); mTimer = setTimeout(measureAll, 120); };
+  measureAll();
+  if (document.fonts) document.fonts.ready.then(measureSoon);
+  addEventListener('load', measureSoon);
+  addEventListener('resize', measureSoon);
+  new ResizeObserver(measureSoon).observe(main);
+
+  /* ---------- Loop principal ---------- */
+  let last = performance.now(), lastY = scrollY, frame = 0, mqVisible = true;
+  const lowPower = innerWidth < 900 || (navigator.hardwareConcurrency || 8) <= 4;
+  new IntersectionObserver(([en]) => { mqVisible = en.isIntersecting; }, { rootMargin: '200px 0px' }).observe(mq);
+  function raf(t) {
+    if (lenis) lenis.raf(t);
+    const dt = Math.min(50, t - last); last = t;
+    const vel = lenis ? lenis.velocity : (scrollY - lastY); lastY = scrollY;
+    frame++;
+    if (!lowPower || frame % 2 === 0) galaxy(reduce ? 0 : t, scrollY); // celular: galáxia a 30 fps
+    heroTick(t);
+    if (!reduce && mqVisible) marqueeTick(dt, vel);
+    threadTick(vel);
+    if (fine) { cx += (tx - cx) * 0.22; cy += (ty - cy) * 0.22; cur.style.transform = `translate(${cx}px,${cy}px)`; }
+    requestAnimationFrame(raf);
+  }
+  requestAnimationFrame(raf);
+
+  /* ---------- 5. Diva OS: globo 3D amarrado ao scroll ---------- */
+  const lab = $('#lab'), canvas = $('#diva');
+  const steps = $$('.steps li'), labBar = $('.lab-bar span');
+  // Three.js (~600 KB) só é baixado quando a pessoa chega perto da seção da Diva
+  const labIO = new IntersectionObserver(([en]) => {
+    if (!en.isIntersecting) return;
+    labIO.disconnect();
+    const s = document.createElement('script');
+    s.src = 'https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js';
+    s.onload = initDiva;
+    document.head.appendChild(s);
+  }, { rootMargin: '1200px 0px' });
+  labIO.observe(lab);
+  function initDiva() {
+    if (!window.THREE || !canvas) return;
+    const T = THREE, small = innerWidth < 900;
+    const renderer = new T.WebGLRenderer({ canvas, antialias: !small, alpha: true, powerPreference: 'high-performance' });
+    renderer.setPixelRatio(Math.min(devicePixelRatio, small ? 1.25 : 1.75));
+    const scene = new T.Scene();
+    const cam = new T.PerspectiveCamera(38, 1, 0.1, 100);
+    cam.position.set(0, 0, 8);
+    const group = new T.Group(); scene.add(group);
+
+    const geo = new T.IcosahedronGeometry(1.75, 3);
+    const pos = geo.attributes.position, orig = pos.array.slice(), dirs = new Float32Array(orig.length);
+    for (let f = 0; f < pos.count / 3; f++) {
+      const i = f * 9;
+      const cx = (orig[i] + orig[i + 3] + orig[i + 6]) / 3, cy = (orig[i + 1] + orig[i + 4] + orig[i + 7]) / 3, cz = (orig[i + 2] + orig[i + 5] + orig[i + 8]) / 3;
+      const len = Math.hypot(cx, cy, cz) || 1, r = 0.5 + Math.random() * 1.6;
+      for (let v = 0; v < 3; v++) { dirs[i + v * 3] = cx / len * r; dirs[i + v * 3 + 1] = cy / len * r; dirs[i + v * 3 + 2] = cz / len * r; }
+    }
+    const shell = new T.Mesh(geo, new T.MeshBasicMaterial({ color: 0x0c0610, side: T.DoubleSide, transparent: true, polygonOffset: true, polygonOffsetFactor: 1, polygonOffsetUnits: 1 }));
+    const wire = new T.Mesh(geo, new T.MeshBasicMaterial({ color: 0xff3d8b, wireframe: true, transparent: true, opacity: 0.85 }));
+    group.add(shell, wire);
+    const core = new T.Mesh(new T.IcosahedronGeometry(0.8, 2), new T.MeshBasicMaterial({ color: 0xff9fd2, wireframe: true, transparent: true, opacity: 0 }));
+    group.add(core);
+    const halo = new T.Mesh(new T.TorusGeometry(2.7, 0.006, 8, 160), new T.MeshBasicMaterial({ color: 0xff8ac8, transparent: true, opacity: 0.5 }));
+    halo.rotation.x = Math.PI / 2.3; scene.add(halo);
+    const N = 1400, pts = new Float32Array(N * 3);
+    for (let i = 0; i < N; i++) {
+      const u = Math.random() * 2 - 1, th = Math.random() * Math.PI * 2, rr = 2.8 + Math.random() * 2.6, s = Math.sqrt(1 - u * u);
+      pts[i * 3] = rr * s * Math.cos(th); pts[i * 3 + 1] = rr * u; pts[i * 3 + 2] = rr * s * Math.sin(th);
+    }
+    const pg = new T.BufferGeometry(); pg.setAttribute('position', new T.BufferAttribute(pts, 3));
+    const dust = new T.Points(pg, new T.PointsMaterial({ color: 0xff9fd2, size: 0.022, transparent: true, opacity: 0.7 }));
+    scene.add(dust);
+
+    let visible = false, smooth = 0, lastEx = -1;
+    new IntersectionObserver(([e]) => { visible = e.isIntersecting; }, { rootMargin: '100px' }).observe(lab);
+    function resize() {
+      const w = canvas.clientWidth, h = canvas.clientHeight;
+      renderer.setSize(w, h, false); cam.aspect = w / h; cam.updateProjectionMatrix();
+      group.position.x = halo.position.x = w > 900 ? 1.6 : 0;
+      group.position.y = halo.position.y = w > 900 ? 0 : -0.9;
+      const sc = w > 900 ? 1 : (h > w ? 0.6 : 0.78); group.scale.setScalar(sc); halo.scale.setScalar(sc);
+    }
+    resize(); addEventListener('resize', resize);
+    const smoothstep = (a, b, x) => { const t = clamp((x - a) / (b - a)); return t * t * (3 - 2 * t); };
+    const clock = new T.Clock();
+    (function loop() {
+      requestAnimationFrame(loop);
+      if (!visible) return;
+      const t = clock.getElapsedTime();
+      const r = lab.getBoundingClientRect();
+      const p = clamp(-r.top / (r.height - innerHeight));
+      smooth += (p - smooth) * (reduce ? 1 : 0.08);
+      group.rotation.y = smooth * Math.PI * 3 + t * 0.06;
+      group.rotation.x = smooth * 0.9;
+      const k = smoothstep(0.22, 0.85, smooth), ex = k * 1.35;
+      if (Math.abs(ex - lastEx) > 1e-4) { for (let i = 0; i < orig.length; i++) pos.array[i] = orig[i] + dirs[i] * ex; pos.needsUpdate = true; lastEx = ex; }
+      shell.material.opacity = 1 - k * 0.75;
+      wire.material.opacity = 0.85 - k * 0.35;
+      core.material.opacity = k * 0.9;
+      core.rotation.y = -t * 0.4;
+      core.scale.setScalar(0.8 + k * 0.35 + Math.sin(t * 3) * 0.05 * k);
+      dust.rotation.y = -t * 0.02 - smooth * 1.2;
+      halo.rotation.z = smooth * 2;
+      cam.position.z = 8 - smooth * 1.6;
+      renderer.render(scene, cam);
+      const idx = Math.min(2, Math.floor(smooth * 3));
+      steps.forEach((s, i) => s.classList.toggle('on', i === idx));
+      labBar.style.transform = `scaleX(${smooth})`;
+    })();
+  }
+})();
+</script>
+</body>
+</html>
